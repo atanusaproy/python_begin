@@ -1,0 +1,6 @@
+1. pip install virtualenv
+2. mkdir abcProject
+3. cd abcProject
+4. virtualenv venv
+5. venv\Scripts\activate.bat
+6. pip install requests
