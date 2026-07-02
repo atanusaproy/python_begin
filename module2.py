@@ -61,12 +61,13 @@
 # 16
 # 5.0
 
-# ========== string[start:end:step] slice ============
-# desc = "abcdeWorld"
-# print(desc[::-1])
-# print(desc[1:8:2])
 
-# ========== range(start, stop, step) ============
+# Assignment operators:
+# x = 10
+# x += 5
+
+# print(x) #15
+
 
 
 
