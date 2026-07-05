@@ -4,3 +4,7 @@
 4. virtualenv venv
 5. venv\Scripts\activate.bat
 6. pip install requests
+7. pip freeze > requirements.txt
+
+# Install all dependencies from requirements.txt
+12. pip install -r requirements.txt
