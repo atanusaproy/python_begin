@@ -96,5 +96,93 @@ def our_sum(*args):
     return sum(args)
 
 
-arr_list = [1, 2, 3, 4, 5, "Hello"]
-print(our_sum(*arr_list)) # Unpacking the list into the function arguments
+# arr_list = [1, 2, 3, 4, 5, "Hello"]
+# print(our_sum(*arr_list)) # Unpacking the list into the function arguments
+
+
+# List comprehension
+# List comprehension is a concise way to create lists in Python. It allows you to generate a new list by applying an expression to each item in an existing iterable (like a list or range) and optionally filtering items based on a condition. 
+
+# New list creation using for loop(old way)
+
+numbers = []
+
+for i in range(1, 11):
+    numbers.append(i)
+
+print(numbers)
+
+# Using list comprehension (new way)
+
+numbers = [i for i in range(1, 11)]
+
+print("List comprehension:", numbers)
+
+# Example 1:
+
+squares = [i**2 for i in range(1, 11)]
+print("Squares:", squares)
+
+#Example 2: (If condition)
+
+even_numbers = [i for i in range(1, 11) if i % 2 == 0]
+print("Even numbers:", even_numbers)
+
+# Example 3: 
+user_names = ["Alice", "Bob", "Charlie", "David"]
+upper_case_names = [name.upper() for name in user_names]
+print("Upper case names:", upper_case_names)
+
+#### Nested list ####
+
+numbers_list = [1 ,3 , 5, 7, 9]
+nested_list = [
+    [1, 2, 3], 
+    [4, 5, 6], 
+    [7, 8, 9]
+]
+
+print("Nested list:", nested_list)
+print(nested_list[1][0]) 
+
+
+
+## Tuples
+#tuples are similar to lists, but they are immutable, meaning their elements cannot be changed after creation. Tuples are defined using parentheses ().
+
+# Creating a tuple
+my_tuple = (1, 2, 3, 4, 5)
+print("Tuple:", my_tuple)
+print("First element of tuple:", my_tuple[0]) # Accessing the first element of the tuple
+print(type(my_tuple)) # Checking the type of the tuple
+
+
+fruits = "Apple", "Banana", "Cherry"
+print("Fruits tuple:", fruits)
+
+# Unpacking a tuple
+fruits = ("Apple", "Banana", "Cherry")
+apple, banana, cherry = fruits
+print("Unpacked tuple:", apple, banana, cherry)
+
+def get_user():
+    return "John", 25, "New York"
+
+name, age, city = get_user()
+print("Name:", name)
+print("Age:", age)
+print("City:", city)
+
+numbers = (1, 2, 3, 4, 5) # 1, [2,3,4], 5
+
+first, *middle, last = numbers
+print("First:", first)
+print("Middle:", middle)
+print("Last:", last)
+
+
+
+
+
+
+
