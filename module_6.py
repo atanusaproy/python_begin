@@ -181,7 +181,49 @@ print("Middle:", middle)
 print("Last:", last)
 
 
+# Named tuples
+from collections import namedtuple
 
+# before named tuples
+
+person = ("John", 25, "New York") # this is a tuple
+print("Person:", person)
+print("Name:", person[0])
+print("Age:", person[1])
+print("City:", person[2])
+
+# after named tuples
+
+person = namedtuple("Person", ["name", "age", "city"])
+person = person("John", 25, "New York")
+
+print("Person:", person)
+print("Name:", person.name)
+print("Age:", person.age)
+print("City:", person.city)
+
+
+
+def get_person():
+    user = namedtuple("User", ["name", "age", "city"])
+    return user("sahinoor", 30, "Kolkata")
+
+print("Person:", get_person())
+
+
+# Iterators and generators
+# Iterators are objects that can be iterated upon. They return one element at a time.
+# It using iter() and next() functions.
+numbers = [1, 2, 3, 4, 5] # this is a list
+iterator = iter(numbers) # this is an iterator
+
+print("Iterator:", iterator) # this will print the iterator object
+print(next(iterator)) # this will print the first element of the list
+print(next(iterator)) # this will print the second element of the list
+print(next(iterator)) # this will print the third element of the list
+print(next(iterator)) # this will print the fourth element of the list
+print(next(iterator)) # this will print the fifth element of the list
+print(next(iterator)) # this will raise a StopIteration error because there are no more elements to iterate through
 
 
 
