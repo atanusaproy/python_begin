@@ -165,8 +165,18 @@ fruits = ("Apple", "Banana", "Cherry")
 apple, banana, cherry = fruits
 print("Unpacked tuple:", apple, banana, cherry)
 
+# Unpacking a tuple with a variable
+fruits = ("Apple", "Banana", "Cherry", "Mango")
+apple, *other_fruits, mango = fruits
+print("Unpacked tuple:", apple, other_fruits, mango)
+
+# Unpacking a tuple with a variable
+fruits = ("Apple", "Banana", "Cherry")
+apple, banana, cherry = fruits
+print("Unpacked tuple:", apple, banana, cherry)
+# Unpacking a tuple with a function
 def get_user():
-    return "John", 25, "New York"
+    return ("John", 25, "New York")
 
 name, age, city = get_user()
 print("Name:", name)
@@ -218,12 +228,33 @@ numbers = [1, 2, 3, 4, 5] # this is a list
 iterator = iter(numbers) # this is an iterator
 
 print("Iterator:", iterator) # this will print the iterator object
-print(next(iterator)) # this will print the first element of the list
-print(next(iterator)) # this will print the second element of the list
-print(next(iterator)) # this will print the third element of the list
-print(next(iterator)) # this will print the fourth element of the list
-print(next(iterator)) # this will print the fifth element of the list
-print(next(iterator)) # this will raise a StopIteration error because there are no more elements to iterate through
+print("First element:", next(iterator)) # this will print the first element of the list
+print("Second element:", next(iterator)) # this will print the second element of the list
+print("Third element:", next(iterator)) # this will print the third element of the list
+print("Fourth element:", next(iterator)) # this will print the fourth element of the list
+print("Fifth element:", next(iterator)) # this will print the fifth element of the list
+
+
+# Generator
+
+def my_generator():
+    yield 1
+    yield 2
+    yield 3
+    yield 4
+    yield 5
+
+
+generator = my_generator()
+print("Generator:", generator)
+print("First element:", next(generator))
+print("Second element:", next(generator))
+print("Third element:", next(generator))
+print("Fourth element:", next(generator))
+print("Fifth element:", next(generator))
+
+
+
 
 
 
