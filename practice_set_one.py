@@ -108,10 +108,120 @@
 # b = list(set(a))
 # print(b)
 
-# 47
-a = [[1, 2], [3, 4]]
-b = a.copy()
-a[0].append(5)
+# # 47
+# import copy
+# a = [[1, 2], [3, 4]]
+# # b = a.copy()
+# b = copy.deepcopy(a)
+# a[0].append(5)
 
-print(a)
-print(b)
+# print(a)
+# print(b)
+
+# # 46
+# a = [1, 2, 3]
+# b = a
+# c = a.copy()
+
+# a.append(4)
+
+# print(a)
+# print(b)
+# print(c)
+
+# # 45
+# d = {
+# "a": 1,
+# "b": 2,
+# "c": 1,
+# "d": 3
+# }
+
+# result = {}
+
+# for k, v in d.items():
+#  result.setdefault(k, []).append(v)
+
+#  print(result)
+
+# # 44
+# numbers = [1, 2, 6, 4]
+
+# d = {x: x * x for x in numbers}
+
+# print(d)
+
+# # 43
+# d = {}
+
+# d.setdefault("skills", []).append("Python")
+# d.setdefault("skills", []).append("SQL")
+
+# print(d)
+
+# # 42
+# a = {"x": 1, "y": 2}
+# b = {"y": 20, "z": 3}
+
+# c = a | b
+
+# print(c)
+
+# # 41
+# a = {"x": 1}
+# b = {"y": 2}
+
+# c = {**a, **b} 
+# # unpacking operator
+
+# print(c)
+
+# # 40
+# d = {
+# "a": 10,
+# "b": 20
+# }
+
+# for key, value in d.items():
+#  print(key, value)
+
+# # 39
+# d = {
+# "a": 10,
+# "b": 20
+# }
+
+# print(d.keys())
+# print(d.values())
+# print(d.items())
+
+# # 38
+# d = {
+# "a": 10,
+# "b": 20
+# }
+
+# d["c"] = 30
+# d["a"] = 100
+
+# print(d)
+
+# # 39
+# d = {
+# "name": "Atanu"
+# }
+
+# print(d.get("age"))
+# print(d.get("age", 0))
+
+# 38
+d = {
+"name": "Atanu",
+"age": 35
+}
+
+print(d["name"])
+print(d["age"])
+
+
+
