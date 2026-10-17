@@ -177,3 +177,149 @@ print(atanu_account.balance)
 
 # atanu_account._bank_balance = 50000
 # print(atanu_account._bank_balance) 
+
+
+# Inheritance
+class Vehicle:
+    def __init__(self, make, model):
+        self.make = make
+        self.model = model
+
+    def start(self):
+        print(f"{self.make} {self.model} is starting.")
+
+    def stop(self):
+        print(f"{self.make} {self.model} is stopping.")
+
+    def drive(self):
+        print(f"{self.make} {self.model} is driving.")
+
+
+class ElectricCar():
+    def __init__(self, make, model, num_doors, battery_capacity):
+        super().__init__(make, model, num_doors)
+        self.battery_capacity = battery_capacity
+
+    def charge(self):
+        print(f"{self.make} {self.model} is charging with a battery capacity of {self.battery_capacity} kWh.")
+
+class PetrolCar():
+    def __init__(self, make, model, num_doors, fuel_capacity):
+        super().__init__(make, model, num_doors)
+        self.fuel_capacity = fuel_capacity
+
+    def refuel(self):
+        print(f"{self.make} {self.model} is refueling with a fuel capacity of {self.fuel_capacity} liters.")
+
+class ElectricBike():
+    def __init__(self, make, model, num_wheels, battery_capacity):
+        super().__init__(make, model, num_wheels)
+        self.battery_capacity = battery_capacity
+
+
+class ECar(Vehicle, ElectricCar):
+    def __init__(self, make, model, num_doors):
+        super().__init__(make, model)
+        self.num_doors = num_doors
+
+class PCar(Vehicle, PetrolCar):
+    def __init__(self, make, model, num_doors):
+        super().__init__(make, model)
+        self.num_doors = num_doors
+
+class Bike(Vehicle):
+    def __init__(self, make, model, num_wheels):
+        super().__init__(make, model)
+        self.num_wheels = num_wheels
+
+
+my_car = Car("Toyota", "Camry", 4)
+my_car.start()
+my_car.stop()
+my_car.drive()
+
+my_bike = Bike("Honda", "CBR", 2)
+my_bike.start()
+my_bike.stop()
+my_bike.drive()
+
+
+#---------------------------------------------------
+
+class Document:
+    def __init__(self, file_name):
+        self.file_name = file_name
+
+    def get_file_name(self):
+        return self.file_name
+
+
+class PDFDocument(Document):
+    def __init__(self, file_name, num_pages):
+        super().__init__(file_name)
+        self.num_pages = num_pages
+
+    def get_num_pages(self):
+        return self.num_pages
+
+
+class WordDocument(Document):
+    def __init__(self, file_name, num_words):
+        super().__init__(file_name)
+        self.num_words = num_words
+
+    def get_num_words(self):
+        return self.num_words
+
+    def get_file_name(self):
+        return f"{self.file_name} (Word Document)"
+
+class SpreadsheetDocument(Document):
+    def __init__(self, file_name, num_sheets):
+        super().__init__(file_name)
+        self.num_sheets = num_sheets
+
+    def get_num_sheets(self):
+        return self.num_sheets
+
+
+my_pdf_file = PDFDocument("my_file.pdf", 10)
+my_pdf_file.get_num_pages()  # Output: 10
+my_pdf_file.get_file_name()  # Output: my_file.pdf
+
+
+my_word_file = WordDocument("my_word_file.docx", 100)
+my_word_file.get_num_words()  # Output: 100
+my_word_file.get_file_name()  # Output: my_word_file.docx
+
+my_spreadsheet_file = SpreadsheetDocument("my_spreadsheet.xlsx", 5)
+my_spreadsheet_file.get_num_sheets()  # Output: 5
+my_spreadsheet_file.get_file_name()  # Output: my_spreadsheet.xlsx
+
+
+# Polymorphism
+class Animal:
+    def make_sound(self):
+        pass
+
+
+class Dog(Animal):
+    def make_sound(self):
+        return "Woof woof!"
+
+
+class Cat(Animal):
+    def make_sound(self):
+        return "Meow meow!"
+
+
+def make_animal_sound(animal):
+    print(animal.make_sound())
+
+my_dog = Dog()
+make_animal_sound(my_dog)  # Output: Woof woof!
+
+my_cat = Cat()
+make_animal_sound(my_cat)  # Output: Meow meow!
+
+
